@@ -41,6 +41,11 @@ fun NotesScreen(noteViewModel: NoteViewModel) {
     var title by remember { mutableStateOf("") }
     var content by remember { mutableStateOf("") }
 
+//    val notes = noteViewModel.notes
+//
+//    var title by remember { mutableStateOf("") }
+//    var content by remember { mutableStateOf("") }
+
     // State tambahan untuk edit mode
     var isEditing by remember { mutableStateOf(false) }
     var editingNoteId by remember { mutableStateOf<String?>(null) }
@@ -118,7 +123,7 @@ fun NotesScreen(noteViewModel: NoteViewModel) {
             ) {
                 Column(modifier = Modifier.padding(8.dp)) {
                     Text(text = note.title, style = MaterialTheme.typography.titleMedium)
-                    Text(text = note.content, style = MaterialTheme.typography.bodyMedium)
+//                    Text(text = note.content, style = MaterialTheme.typography.bodyMedium)
 
                     Spacer(modifier = Modifier.height(4.dp))
 
