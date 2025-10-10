@@ -17,6 +17,8 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.ui.graphics.Color
+import java.text.DateFormat
+import java.util.Date
 
 class MainActivity : ComponentActivity() {
     private val noteViewModel: NoteViewModel by viewModels()
@@ -117,6 +119,14 @@ fun NotesScreen(noteViewModel: NoteViewModel) {
                 Column(modifier = Modifier.padding(8.dp)) {
                     Text(text = note.title, style = MaterialTheme.typography.titleMedium)
                     Text(text = note.content, style = MaterialTheme.typography.bodyMedium)
+
+                    Spacer(modifier = Modifier.height(4.dp))
+
+                    Text(
+                        text = "Dibuat pada: ${DateFormat.getDateTimeInstance().format(Date(note.timestamp))}",
+                        style = MaterialTheme.typography.bodySmall
+                    )
+
                     Spacer(modifier = Modifier.height(8.dp))
 
                     Row {

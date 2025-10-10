@@ -24,7 +24,10 @@ class NoteViewModel : ViewModel() {
     }
 
     fun addNote(note: Note) {
-        db.collection("notes").add(note)
+        val data = note.copy(
+            timestamp = System.currentTimeMillis()
+        )
+        db.collection("notes").add(data)
     }
 
     fun updateNote(noteId: String, note: Note) {
