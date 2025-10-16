@@ -21,7 +21,8 @@ class MainActivity : ComponentActivity() {
 }
 @Composable
 fun QuoteScreen(viewModel: QuoteViewModel) {
-    val quote = viewModel.quote
+    val quote by viewModel.quote.collectAsState()
+
     Column(
         modifier = Modifier.fillMaxSize().padding(16.dp),
         verticalArrangement = Arrangement.Center,
@@ -29,7 +30,8 @@ fun QuoteScreen(viewModel: QuoteViewModel) {
     ) {
         Text(text = quote, style = MaterialTheme.typography.bodyLarge)
         Spacer(modifier = Modifier.height(20.dp))
-        Button(onClick = { viewModel.fetchQuote() }) {
+        Button(onClick = { viewModel.fetchQuoteWithThrow() })
+        {
             Text("Get Random Quote")
         }
     }
