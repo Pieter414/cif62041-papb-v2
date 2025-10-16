@@ -1,6 +1,7 @@
 package com.example.coroutines
 
 import kotlinx.coroutines.delay
+import java.lang.Thread.sleep
 import kotlin.random.Random
 
 class QuoteRepository {
@@ -14,6 +15,7 @@ class QuoteRepository {
 
     suspend fun getRandomQuote(): String {
         delay(2000) // simulasi network delay
+        sleep(2000) // simulasi sleep
         return quotes[Random.nextInt(quotes.size)]
     }
 }
