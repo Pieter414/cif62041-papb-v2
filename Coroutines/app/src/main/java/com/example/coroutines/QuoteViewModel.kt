@@ -14,7 +14,7 @@ class QuoteViewModel : ViewModel() {
     val quote: StateFlow<String> get() = _quote
     fun fetchQuote() {
         viewModelScope.launch(Dispatchers.Main) {
-            _quote.value = "Loading..."
+//            _quote.value = "Loading..."
             val result = repository.getRandomQuote()
             _quote.value = result
         }
