@@ -10,13 +10,16 @@ import kotlinx.coroutines.launch
 
 class QuoteViewModel : ViewModel() {
     private val repository = QuoteRepository()
-    private val _quote = MutableStateFlow("Tap the button to get a quote")
-    val quote: StateFlow<String> get() = _quote
+//    private val _quote = MutableStateFlow("Tap the button to get a quote")
+    var quote: String = "Tap the button to get a quote"
+//    val quote: StateFlow<String> get() = _quote
     fun fetchQuote() {
         viewModelScope.launch(Dispatchers.Main) {
 //            _quote.value = "Loading..."
+            quote = "Loading..."
             val result = repository.getRandomQuote()
-            _quote.value = result
+            quote = result
+//            _quote.value = result
         }
     }
 }

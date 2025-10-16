@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
 }
 @Composable
 fun QuoteScreen(viewModel: QuoteViewModel) {
-    val quote by viewModel.quote.collectAsState()
+    val quote = viewModel.quote
     Column(
         modifier = Modifier.fillMaxSize().padding(16.dp),
         verticalArrangement = Arrangement.Center,
