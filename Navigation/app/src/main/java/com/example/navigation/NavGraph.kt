@@ -1,5 +1,6 @@
 package com.example.navigation
 
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -17,6 +18,9 @@ object Destinations {
 @Composable
 fun NavGraph(navController: NavHostController) {
     NavHost(navController = navController, startDestination = Destinations.HOME) {
+        composable(Destinations.PROFILE) {
+            ProfileScreen(navController)
+        }
         composable(Destinations.HOME) {
             HomeScreen(navController)
         }
@@ -26,9 +30,6 @@ fun NavGraph(navController: NavHostController) {
         ) { backStackEntry ->
             DetailScreen(backStackEntry.arguments?.getString("message")
             )
-        }
-        composable(Destinations.PROFILE) {
-            ProfileScreen(navController)
         }
     }
 }
