@@ -31,5 +31,8 @@ fun NavGraph(navController: NavHostController) {
             DetailScreen(backStackEntry.arguments?.getString("message")
             )
         }
+        composable("not_found") {
+            NotFoundScreen(navController)
+        }
     }
 }

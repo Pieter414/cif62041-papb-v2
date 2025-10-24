@@ -14,34 +14,19 @@ import androidx.compose.material3.Button
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun HomeScreen(navController: NavHostController) {
+fun NotFoundScreen(navController: NavHostController) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Button(onClick = {
-            navController.navigate("detail/Hello from Home")
-        }) {
-            Text("Go to Detail")
-        }
+        Text("Oops! Page not found.")
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = {
-            navController.navigate("profile")
+//            navController.navigate("home")
+            navController.popBackStack()
         }) {
-            Text("Go to Profile")
-        }
-        Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = {
-            val target = "unknown"
-            val availableRoutes = listOf("home", "profile", "detail/{message}")
-            if (availableRoutes.none { target.startsWith(it.removeSuffix("/{message}")) }) {
-                navController.navigate("not_found")
-            } else {
-                navController.navigate(target)
-            }
-        }) {
-            Text("Go to Unknown")
+            Text("Back to Home")
         }
     }
 }
