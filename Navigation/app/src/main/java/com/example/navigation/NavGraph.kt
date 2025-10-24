@@ -16,7 +16,7 @@ object Destinations {
 
 @Composable
 fun NavGraph(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = Destinations.HOME) {
+    NavHost(navController = navController, startDestination = Destinations.PROFILE) {
         composable(Destinations.HOME) {
             HomeScreen(navController)
         }
