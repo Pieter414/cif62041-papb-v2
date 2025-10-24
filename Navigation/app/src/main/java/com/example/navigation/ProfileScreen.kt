@@ -23,7 +23,8 @@ fun ProfileScreen(navController: NavHostController) {
         Text("This is Profile Screen")
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = {
-            navController.navigate("home")
+//            navController.navigate("home")
+            navController.popBackStack()
         }) {
             Text("Back to Home")
         }
