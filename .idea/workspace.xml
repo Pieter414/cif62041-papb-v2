@@ -9,9 +9,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="741bdda4-a46d-419f-a037-10d2edc1846e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+    <list default="true" id="3ff257e0-10f3-49d3-af1f-35f12a6f6c67" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +31,12 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PraktikumLocationServices" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -50,9 +54,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
+  "associatedIndex": 5
 }]]></component>
-  <component name="ProjectId" id="34Uyg3k73MOtX19pl7WuIMMtwGD" />
+  <component name="ProjectId" id="350ZRzhG2TBd5eGl5coPXnWKX4G" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -73,14 +77,9 @@
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
-      <recent name="com.example.navigation" />
-    </key>
-  </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="Navigation.app" />
+      <module name="PraktikumLocationServices.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -154,25 +153,25 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="741bdda4-a46d-419f-a037-10d2edc1846e" name="Changes" comment="" />
-      <created>1761282552290</created>
+      <changelist id="3ff257e0-10f3-49d3-af1f-35f12a6f6c67" name="Changes" comment="" />
+      <created>1762248945949</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1761282552290</updated>
+      <updated>1762248945949</updated>
     </task>
     <servers />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
       <map>
-        <entry key="com.example.navigation">
+        <entry key="com.example.praktikumlocationservices">
           <value>
-            <CheckInfo lastCheckTimestamp="1761282647163" />
+            <CheckInfo lastCheckTimestamp="1762249009074" />
           </value>
         </entry>
-        <entry key="com.example.navigation.test">
+        <entry key="com.example.praktikumlocationservices.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1761282647191" />
+            <CheckInfo lastCheckTimestamp="1762249009112" />
           </value>
         </entry>
       </map>
