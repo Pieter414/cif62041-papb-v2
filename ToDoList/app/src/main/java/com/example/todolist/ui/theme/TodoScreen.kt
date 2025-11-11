@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.todolist.viewmodel.TodoViewModel
 import com.example.todolist.model.FilterType
+import com.example.todolist.model.Todo
 
 @Composable
 fun FilterButton(
@@ -53,6 +54,11 @@ fun TodoScreen(vm: TodoViewModel = viewModel()) {
     val todos by vm.filteredTodos.collectAsState()
     val filter by vm.filter.collectAsState()
 
+    // Update task
+    var showEditDialog by remember { mutableStateOf(false) }
+    var editingTodo by remember { mutableStateOf<Todo?>(null) }
+    var editText by remember { mutableStateOf("") }
+
     var text by rememberSaveable { mutableStateOf("") }
     Column(Modifier.padding(16.dp)) {
         OutlinedTextField(
@@ -82,9 +88,40 @@ fun TodoScreen(vm: TodoViewModel = viewModel()) {
                 TodoItem(
                     todo = todo,
                     onToggle = { vm.toggleTask(todo.id) },
-                    onDelete = { vm.deleteTask(todo.id) }
+                    onDelete = { vm.deleteTask(todo.id) },
+                    onEdit = {
+                        editingTodo = todo
+                        editText = todo.title
+                        showEditDialog = true
+                    }
                 )
             }
+        }
+        if (showEditDialog && editingTodo != null) {
+            AlertDialog(
+                onDismissRequest = { showEditDialog = false },
+                title = { Text("Edit Task") },
+                text = {
+                    OutlinedTextField(
+                        value = editText,
+                        onValueChange = { editText = it },
+                        label = { Text("Task name") }
+                    )
+                },
+                confirmButton = {
+                    TextButton(onClick = {
+                        vm.updateTask(editingTodo!!.id, editText.trim())
+                        showEditDialog = false
+                    }) {
+                        Text("Save")
+                    }
+                },
+                dismissButton = {
+                    TextButton(onClick = { showEditDialog = false }) {
+                        Text("Cancel")
+                    }
+                }
+            )
         }
     }
 }

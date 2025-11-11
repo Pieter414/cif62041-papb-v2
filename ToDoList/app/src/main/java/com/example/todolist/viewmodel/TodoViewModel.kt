@@ -47,4 +47,10 @@ class TodoViewModel : ViewModel() {
             SharingStarted.Eagerly,
             emptyList()
         )
+
+    fun updateTask(id: Int, newTitle: String) {
+        _todos.value = _todos.value.map { t ->
+            if (t.id == id) t.copy(title = newTitle) else t
+        }
+    }
 }
